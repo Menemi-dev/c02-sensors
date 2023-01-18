@@ -1,0 +1,11 @@
+{
+  "require": {
+    "phpunit/phpunit": "^9",
+    "guzzlehttp/guzzle": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "CO2SensorAPI\\": "."
+    }
+  }
+}
