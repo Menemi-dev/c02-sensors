@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file generates a database for testing the service
+ */
+
 include 'inc/config.php';
 
 try {
@@ -27,6 +31,11 @@ try {
   throw new Exception($e->getMessage());
 }
 
+/**
+ * Creates the service database
+ *
+ * @param mysqli $connection
+ */
 function sensors_create_db($connection)
 {
   $sql = "CREATE DATABASE " . DB_DATABASE_NAME;
@@ -37,6 +46,11 @@ function sensors_create_db($connection)
   }
 }
 
+/**
+ * Creates the table Sensors
+ *
+ * @param mysqli $connection
+ */
 function sensors_create_table_sensors($connection)
 {
   $sql = "CREATE TABLE Sensors (
@@ -52,6 +66,11 @@ function sensors_create_table_sensors($connection)
   }
 }
 
+/**
+ * Creates the table Alerts
+ *
+ * @param mysqli $connection
+ */
 function sensors_create_table_alerts($connection)
 {
   $sql = "CREATE TABLE Alerts (
@@ -69,6 +88,11 @@ function sensors_create_table_alerts($connection)
   }
 }
 
+/**
+ * Creates the table Mesurements
+ *
+ * @param mysqli $connection
+ */
 function sensors_create_table_mesurements($connection)
 {
   $sql = "CREATE TABLE Mesurements (
@@ -88,6 +112,11 @@ function sensors_create_table_mesurements($connection)
   }
 }
 
+/**
+ * Inserts a row on the Sensors table
+ *
+ * @param mysqli $connection
+ */
 function sensors_add_test_sensor($connection)
 {
   $sql = "INSERT INTO Sensors (uuid)

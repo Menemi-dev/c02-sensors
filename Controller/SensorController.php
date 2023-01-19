@@ -4,6 +4,11 @@ use CO2SensorAPI\Model\SensorModel;
 
 class SensorController extends BaseController
 {
+  /**
+   * Get sensor status
+   *
+   * @param string $uuid
+   */
   public function status($uuid)
   {
     $strErrorDesc = '';
@@ -33,6 +38,12 @@ class SensorController extends BaseController
       );
     }
   }
+
+  /**
+   * Get sensor metrics
+   *
+   * @param string $uuid
+   */
   public function metrics($uuid)
   {
     $strErrorDesc = '';
@@ -62,6 +73,12 @@ class SensorController extends BaseController
       );
     }
   }
+
+  /**
+   * Get sensor alerts
+   *
+   * @param string $uuid
+   */
   public function alerts($uuid)
   {
     $strErrorDesc = '';
@@ -106,6 +123,11 @@ class SensorController extends BaseController
     }
   }
 
+  /**
+   * Creates sensor mesurements on DB and updates sensor status and alerts
+   *
+   * @param string $uuid
+   */
   public function mesurements($uuid)
   {
     $strErrorDesc = '';

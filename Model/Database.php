@@ -4,6 +4,10 @@ namespace CO2SensorAPI\Model;
 class Database
 {
   protected $connection = null;
+
+  /**
+   * Sets up a connection to the DB
+   */
   public function __construct()
   {
     try {
@@ -16,6 +20,14 @@ class Database
       throw new \Exception($e->getMessage());
     }
   }
+
+  /**
+   * Selects records from the DB according to the query
+   *
+   * @param string $query
+   * @param array $params
+   * @return mixed
+   */
   public function select($query = "", $params = [])
   {
     try {
@@ -28,6 +40,14 @@ class Database
     }
     return false;
   }
+
+  /**
+   * Inserts and updates records from the DB according to the query
+   *
+   * @param string $query
+   * @param array $params
+   * @return mixed
+   */
   public function insert($query = "", $params = [])
   {
     try {
@@ -40,6 +60,14 @@ class Database
     }
     return false;
   }
+
+  /**
+   * Prepares and executes an SQL statement
+   *
+   * @param string $query
+   * @param array $params
+   * @return object
+   */
   private function executeStatement($query = "", $params = [])
   {
     try {

@@ -4,7 +4,7 @@ namespace CO2SensorAPI\Controller;
 class BaseController
 {
   /**
-   * Get querystring params.
+   * Get querystring params
    *
    * @return array
    */
@@ -13,8 +13,9 @@ class BaseController
     parse_str($_SERVER['QUERY_STRING'], $query);
     return $query;
   }
+
   /**
-   * Send API output.
+   * Send API output
    *
    * @param mixed $data
    * @param string $httpHeader
